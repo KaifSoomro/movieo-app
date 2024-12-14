@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import useFetchDetail from '../hooks/useFetchDetail'
 import useFetch from '../hooks/useFetch'
@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import moment from 'moment';
 import Divider from '../components/Divider';
 import HorizontalScrollCard from '../components/HorizontalScrollCard'
+import VideoPlay from '../components/VideoPlay';
 
 const DetailPage = () => {
 
@@ -14,18 +15,21 @@ const DetailPage = () => {
   const { data: castData } = useFetchDetail(`/${params?.explore}/${params?.id}/credits?api_key=3c47e5606bbef14a1eb27d79da00758e`);
   const {data: similarData} = useFetch(`/${params?.explore}/${params?.id}/similar?api_key=3c47e5606bbef14a1eb27d79da00758e`)
   const {data: recommendedData} = useFetch(`/${params?.explore}/${params?.id}/recommendations?api_key=3c47e5606bbef14a1eb27d79da00758e`)
+  const [playVideo,setPlayVideo] = useState(false)
+  const [playVideoId, setPlayVideoId] = useState('')
   const imageURL = useSelector(state => state.movieoData.imageURL)
 
-  console.log('data', data)
-  console.log('Star Cast', castData)
   const duration = Number(data?.runtime/60).toFixed(1).split('.')
 
   const writer = castData?.crew?.filter(el => el?.job === 'Writer')?.map(el => el?.name)?.join(', ')
 
-  console.log('writer',writer)
+  const  handlePlayVideo = (data) => {
+    setPlayVideoId(data)
+    setPlayVideo(true)
+  }
 
   return (
-    <div>
+    <div className='px-3'>
         <div className='w-full h-[400px] relative hidden lg:block'>
            <div className='w-full h-full'>
               <img 
@@ -44,6 +48,7 @@ const DetailPage = () => {
             alt=""
             className='h-80 w-60 object-cover rounded'
           />
+          <button onClick={()=>handlePlayVideo(data)} className='mt-3 w-full py-2 px-4 text-center text-black bg-white rounded font-bold text-lg hover:bg-gradient-to-l from-red-500 to-orange-500 hover:scale-105 transition-all'>Play Now</button>
         </div>
 
         <div>
@@ -101,7 +106,7 @@ const DetailPage = () => {
               {
                 castData?.cast?.filter(el => el?.profile_path).map((cast,index)=>{
                   return (
-                    <div className='text-center'>
+                    <div key={index} className='text-center'>
                        <div>
                           <img
                               src={imageURL+cast?.profile_path}
@@ -126,6 +131,12 @@ const DetailPage = () => {
               <div>
                 <HorizontalScrollCard data={recommendedData} heading={'Recommended ' + params?.explore} media_type={params?.explore}/>
               </div>
+
+              {
+                playVideo && (
+                  <VideoPlay data={playVideoId} close={()=>setPlayVideo(false)} media_type={params?.explore}/>
+                )
+              }
     </div>
   )
 }

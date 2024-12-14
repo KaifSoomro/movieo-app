@@ -10,8 +10,6 @@ const Header = () => {
     const removeSpace = location?.search?.slice(3)?.split('%20').join(' ')
     const [searchInput, setSearchInput] = useState(removeSpace)
     const navigate = useNavigate()
-   
-    console.log('location',)
 
     useEffect(()=>{
         if(searchInput){
