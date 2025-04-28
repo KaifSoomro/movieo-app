@@ -55,9 +55,9 @@ const Header = () => {
                         onChange={(e)=>setSearchInput(e.target.value)}
                         value={searchInput}
                     />
-                    <button className='text-3xl text-white'>
+                    <NavLink to={"/search"} className='text-3xl text-white'>
                          <HiMagnifyingGlass />
-                    </button>
+                    </NavLink>
                 </form>
                 <div>
                     <img 

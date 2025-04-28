@@ -102,7 +102,7 @@ const DetailPage = () => {
 
           <Divider />
           <h2 className='font-semibold text-white text-lg'>Cast : </h2>
-          <div className='grid grid-cols-[repeat(auto-fit,96px)] gap-5 mt-4 justify-center'>
+          <div className='grid grid-cols-[repeat(auto-fit,96px)] gap-5 mt-4 justify-center sm:justify-normal'>
               {
                 castData?.cast?.filter(el => el?.profile_path).map((cast,index)=>{
                   return (
