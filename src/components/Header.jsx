@@ -63,7 +63,7 @@ const Header = () => {
                     <img 
                      src={userIcon} 
                      alt="" 
-                     className='w-9 h-9 rounded-full cursor-pointer active:scale-50 transition-all'
+                     className='w-9 h-9 rounded-full cursor-pointer active:scale-80 transition-all'
                     />
                 </div>
             </div>
