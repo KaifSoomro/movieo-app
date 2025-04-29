@@ -7,7 +7,7 @@ import FacebookLogo from "../assets/facebook.png"
 
 const Footer = () => {
   return (
-    <footer className='w-full h-[300px]'>
+    <footer className='w-full h-[320px]'>
       <div className='container h-full mx-auto bg-gradient-to-tl from-neutral-950 to-neutral-800 py-5 px-3 flex items-center justify-center flex-col rounded'>
           <img src={Logo} className='sm:w-[200px] w-[150px]' />
           <p className='sm:text-xl mb-2'>The world of cinema, in your pocket.</p>
@@ -29,6 +29,9 @@ const Footer = () => {
              <Link to={"https://pk.linkedin.com/in/kaif-soomro-72368b2b8"}>
              <img src={LinkdinLogo} className='w-[43px] sm:w-[53px] active:scale-80'/>
              </Link>
+          </div>
+          <div className='mt-3'>
+            <p>© Copyright all reserved to Kaif soomro</p>
           </div>
       </div>
     </footer>
