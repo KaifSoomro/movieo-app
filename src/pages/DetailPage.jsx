@@ -23,7 +23,7 @@ const DetailPage = () => {
 
   const writer = castData?.crew?.filter(el => el?.job === 'Writer')?.map(el => el?.name)?.join(', ')
 
-  const  handlePlayVideo = (data) => {
+  const handlePlayVideo = (data) => {
     setPlayVideoId(data)
     setPlayVideo(true)
   }
