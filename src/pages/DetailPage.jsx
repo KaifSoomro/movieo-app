@@ -38,7 +38,7 @@ const DetailPage = () => {
                   className='h-full w-full object-cover'
                 />
            </div>
-           <div className='absolute w-full h-full top-0 bg-gradient-to-t from-neutral-900 to-transparent'></div>
+           <div className='absolute w-full h-full top-0 bg-linear-to-t from-neutral-900 to-transparent'></div>
         </div>
 
       <div className='container mx-auto py-16 lg:py-0 flex gap-5 lg:gap-10 flex-col lg:flex-row'>
@@ -46,9 +46,9 @@ const DetailPage = () => {
           <img
             src={imageURL + data?.poster_path}
             alt=""
-            className='h-80 w-60 object-cover rounded'
+            className='h-80 w-60 object-cover rounded-sm'
           />
-          <button onClick={()=>handlePlayVideo(data)} className='mt-3 w-full py-2 px-4 text-center text-black bg-white rounded font-bold text-lg hover:bg-gradient-to-l from-red-500 to-orange-500 hover:scale-105 transition-all'>Play Now</button>
+          <button onClick={()=>handlePlayVideo(data)} className='mt-3 w-full py-2 px-4 text-center text-black bg-white rounded-sm font-bold text-lg hover:bg-linear-to-l from-red-500 to-orange-500 hover:scale-105 transition-all'>Play Now</button>
         </div>
 
         <div>

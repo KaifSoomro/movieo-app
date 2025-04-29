@@ -7,7 +7,7 @@ const Card = ({data,trending,index,media_type}) => {
     const imageURL = useSelector(state => state.movieoData.imageURL)
     const mediaType = data.media_type ?? media_type
   return (
-    <Link to={'/'+mediaType+'/'+data.id} className='w-full min-w-[230px] max-w-[230px] rounded h-80 overflow-hidden block relative hover:scale-105 transition-all'>
+    <Link to={'/'+mediaType+'/'+data.id} className='w-full min-w-[230px] max-w-[230px] rounded-sm h-80 overflow-hidden block relative hover:scale-105 transition-all'>
        
           {
               data?.poster_path ? (
