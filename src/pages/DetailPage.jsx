@@ -119,16 +119,18 @@ const DetailPage = () => {
               </div>
             ))}
           </div>
-          {castData?.cast?.filter((el) => el?.profile_path)?.length > 5 && !showAllCast && (
-            <button onClick={handleShowMoreCast} className="mt-3 text-neutral-400 hover:text-neutral-200 cursor-pointer">
+         <div className='w-full flex items-center justify-center sm:justify-normal'>
+         {castData?.cast?.filter((el) => el?.profile_path)?.length > 5 && !showAllCast && (
+            <button onClick={handleShowMoreCast} className="mt-6 text-xl text-neutral-400 hover:text-neutral-200 cursor-pointer justify-center">
               Show More
             </button>
           )}
           {showAllCast && castData?.cast?.filter((el) => el?.profile_path)?.length > 5 && (
-            <button onClick={handleShowLessCast} className="mt-3 text-neutral-400 hover:text-neutral-200 cursor-pointer">
+            <button onClick={handleShowLessCast} className="mt-6 text-xl text-neutral-400 hover:text-neutral-200 cursor-pointer justify-center">
               Show Less
             </button>
           )}
+         </div>
         </div>
       </div>
       <div>
