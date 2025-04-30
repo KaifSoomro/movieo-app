@@ -23,7 +23,7 @@ const DetailPage = () => {
 
   const writer = castData?.crew?.filter((el) => el?.job === 'Writer')?.map((el) => el?.name)?.join(', ');
 
-  const visibleCast = showAllCast ? castData?.cast?.filter((el) => el?.profile_path) : castData?.cast?.filter((el) => el?.profile_path)?.slice(0, 5); // Show first 5 cast members initially
+  const visibleCast = showAllCast ? castData?.cast?.filter((el) => el?.profile_path) : castData?.cast?.filter((el) => el?.profile_path)?.slice(0, 5)
 
   const handlePlayVideo = (data) => {
     setPlayVideoId(data);
