@@ -21,7 +21,6 @@ const Home = () => {
         <HorizontalScrollCard data={topRatedData} heading={'Top Rated Movies'} media_type={'movie'}/>
         <HorizontalScrollCard data={popularShows} heading={'Popular TV Shows'} media_type={'tv'}/>
         <HorizontalScrollCard data={onTheAir} heading={'On The Air'} media_type={'tv'}/>
-
     </div>
   )
 }
