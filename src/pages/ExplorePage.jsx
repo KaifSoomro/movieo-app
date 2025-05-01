@@ -47,12 +47,16 @@ const ExplorePage = () => {
   useEffect(() => {
    window.addEventListener('scroll',handleScroll)
   }, [])
+
+   useEffect(() => {
+        window.scrollTo(0, 0);
+    })
   
 
   return (
     <div className='py-16'>
         <div className='container mx-auto'>
-            <h3 className='capitalize text-xl lg:text-2xl font-semibold my-3 ms-4'>Popular {params.explore} Show</h3>
+            <h3 className='capitalize text-xl lg:text-2xl font-semibold my-3 ms-4 text-center lg:text-start'>Popular {params.explore} Show</h3>
             <div className='grid grid-cols-[repeat(auto-fit,230px)] gap-6 justify-center lg:justify-center'>
               {
                 data.map((exploreData,index)=>{

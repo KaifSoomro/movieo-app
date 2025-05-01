@@ -12,6 +12,9 @@ const Home = () => {
   const { data :popularShows } = useFetch('/tv/popular?api_key=3c47e5606bbef14a1eb27d79da00758e')
   const { data :onTheAir } = useFetch('/tv/on_the_air?api_key=3c47e5606bbef14a1eb27d79da00758e')
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  })
 
   return (
     <div>

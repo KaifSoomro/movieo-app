@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetchDetail from '../hooks/useFetchDetail';
 import useFetch from '../hooks/useFetch';
@@ -37,6 +37,10 @@ const DetailPage = () => {
   const handleShowLessCast = () => {
     setShowAllCast(false);
   };
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  })
 
   return (
     <div className="px-3 pt-5">

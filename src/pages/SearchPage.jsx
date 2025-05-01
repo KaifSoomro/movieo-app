@@ -54,6 +54,10 @@ const SearchPage = () => {
     useEffect(() => {
       window.addEventListener('scroll',handleScroll)
      }, [])
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    })
      
 
   return (
