@@ -21,6 +21,9 @@ const Header = () => {
         e.preventDefault();
     }
 
+    const handleUser = () => {
+        window.scrollTo(0, document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    }
   return (
     <header className='fixed top-0 w-full h-16 bg-black/75 z-40'> 
         <div className="container mx-auto px-4 flex items-center h-full">
@@ -59,7 +62,7 @@ const Header = () => {
                          <HiMagnifyingGlass />
                     </NavLink>
                 </form>
-                <div>
+                <div onClick={handleUser}>
                     <img 
                      src={userIcon} 
                      alt="" 
