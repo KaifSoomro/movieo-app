@@ -4,6 +4,8 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import userIcon from '../assets/user.png'
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { navigation } from '../constants/navigation';
+import gsap from "gsap";
+import { useRef } from "react";
 
 const Header = () => {
     const location = useLocation()
@@ -21,8 +23,17 @@ const Header = () => {
         e.preventDefault();
     }
 
+    const navigationRef = useRef(null);
+
+    useEffect(()=>{
+        gsap.from(navigationRef.current,{
+            y:-80,
+            duration:0.7,
+        })
+    })
+
   return (
-    <header className='fixed top-0 w-full h-16 bg-black/75 z-40'> 
+    <header ref={navigationRef} className='fixed top-0 w-full h-16 bg-black/75 z-40'> 
         <div className="container mx-auto px-4 flex items-center h-full">
             <Link to={'/'}>
                 <img
