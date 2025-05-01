@@ -28,7 +28,7 @@ const Header = () => {
     useEffect(()=>{
         gsap.from(navigationRef.current,{
             y:-80,
-            duration:0.7,
+            duration:0.4,
         })
     })
 

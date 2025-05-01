@@ -39,7 +39,7 @@ const DetailPage = () => {
   };
 
   return (
-    <div className="px-3">
+    <div className="px-3 pt-5">
       <div className="w-full h-[400px] relative hidden lg:block">
         <div className="w-full h-full">
           <img src={imageURL + data?.backdrop_path} alt="" className="h-full w-full object-cover" />
