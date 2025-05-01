@@ -14,7 +14,7 @@ axios.defaults.headers.common['Authorization'] = `Bearer ${import.meta.env.REACT
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}/>
+        <RouterProvider router={router}/>
     </Provider>
   // </StrictMode>,
 )
