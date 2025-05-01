@@ -7,6 +7,8 @@ import moment from 'moment';
 import Divider from '../components/Divider';
 import HorizontalScrollCard from '../components/HorizontalScrollCard';
 import VideoPlay from '../components/VideoPlay';
+import { MdArrowDropUp } from "react-icons/md";
+import { MdArrowDropDown } from "react-icons/md";
 
 const DetailPage = () => {
   const params = useParams();
@@ -125,13 +127,13 @@ const DetailPage = () => {
           </div>
          <div className='w-full flex items-center justify-center sm:justify-normal'>
          {castData?.cast?.filter((el) => el?.profile_path)?.length > 5 && !showAllCast && (
-            <button onClick={handleShowMoreCast} className="mt-6 text-xl text-neutral-400 hover:text-neutral-200 cursor-pointer justify-center">
-              Show More
+            <button onClick={handleShowMoreCast} className="mt-6 text-xl text-neutral-200 cursor-pointer flex items-center justify-center group">
+              <span><MdArrowDropDown className='text-3xl md:text-4xl text-neutral-200 group-hover:text-orange-500' /></span> Show More
             </button>
           )}
           {showAllCast && castData?.cast?.filter((el) => el?.profile_path)?.length > 5 && (
-            <button onClick={handleShowLessCast} className="mt-6 text-xl text-neutral-400 hover:text-neutral-200 cursor-pointer justify-center">
-              Show Less
+            <button onClick={handleShowLessCast} className="mt-6 text-xl text-neutral-200 cursor-pointer flex items-center justify-center group">
+              <span><MdArrowDropUp className='text-3xl md:text-4xl text-neutral-200 group-hover:text-orange-500' /></span> Show Less
             </button>
           )}
          </div>
